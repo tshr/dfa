@@ -6,7 +6,7 @@ class DFA
 
   def initialize(states, transition_hash)
     @states = states
-    @initial_state = states.map{|state| state if state.is_start}.first
+    @initial_state = states.map{|state| state if state.is_start}.delete_if {|x| x == nil}.first
     @transition_hash = transition_hash
   end
 
