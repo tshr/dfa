@@ -10,14 +10,12 @@ class DFA
     @transition_hash = transition_hash
   end
 
+  def compute_final_state(string)
+    string.split("").inject(@initial_state) { |state, ch| get_state_by_name(@transition_hash[state.name][ch]) }
+  end
+
   def accepts?(string)
-
-    current_state = @initial_state
-    string.each_char do |ch|
-      current_state = get_state_by_name(@transition_hash[current_state.name][ch])
-    end
-
-    !!current_state.is_accept
+    !!compute_final_state(string).is_accept
   end
 
   private
@@ -37,7 +35,11 @@ end
 
 # @@test_dfa = DFA.new([State.new("s1", true, true), State.new("s2", false, false)], @@test_transition_hash)
 
-# maybe use inject instead of each_char
+
+# string.each_char do |ch|
+#   current_state = get_state_by_name(@transition_hash[current_state.name][ch])
+# end
+# !!current_state.is_accept
+
 # validations
-# final state method
 # tests
