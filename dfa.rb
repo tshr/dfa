@@ -29,25 +29,7 @@ class DFA
   end
 
   def compute_next_state(current_state, character)
-    get_state_by_name(@transition_hash[current_state.name][character])
+    get_state_by_name @transition_hash[current_state.name][character]
   end
 
 end
-
-# test_transition_hash = {
-
-#   "s1" => {"0" => "s2", "1" => "s1"},
-#   "s2" => {"0" => "s1", "1" => "s2"}
-
-# }
-
-# @test_dfa = DFA.new([State.new("s1", true, true), State.new("s2", false, false)], test_transition_hash)
-
-
-# string.each_char do |ch|
-#   current_state = get_state_by_name(@transition_hash[current_state.name][ch])
-# end
-# !!current_state.is_accept
-
-# validations
-# tests
