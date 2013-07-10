@@ -15,7 +15,7 @@ class DFA
   end
 
   def compute_final_state(string)
-    string.split("").inject(@initial_state) { |state, ch| get_state_by_name(@transition_hash[state.name][ch]) }
+    string.split("").inject(@initial_state) { |state, ch| compute_next_state(state, ch) }
   end
 
   def accepts?(string)
@@ -28,16 +28,20 @@ class DFA
     @states.select{|s| s.name == name}.first
   end
 
+  def compute_next_state(current_state, character)
+    get_state_by_name(@transition_hash[current_state.name][character])
+  end
+
 end
 
-# @@test_transition_hash = {
+# test_transition_hash = {
 
 #   "s1" => {"0" => "s2", "1" => "s1"},
 #   "s2" => {"0" => "s1", "1" => "s2"}
 
 # }
 
-# @@test_dfa = DFA.new([State.new("s1", true, true), State.new("s2", false, false)], @@test_transition_hash)
+# @test_dfa = DFA.new([State.new("s1", true, true), State.new("s2", false, false)], test_transition_hash)
 
 
 # string.each_char do |ch|
