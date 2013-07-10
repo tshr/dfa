@@ -10,6 +10,10 @@ class DFA
     @transition_hash = transition_hash
   end
 
+  def accept_states
+    @states.select{|s| s.is_accept}
+  end
+
   def compute_final_state(string)
     string.split("").inject(@initial_state) { |state, ch| get_state_by_name(@transition_hash[state.name][ch]) }
   end
