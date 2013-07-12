@@ -33,7 +33,7 @@ class DFA
   end
 
   def compute_next_state(current_state, character)
-    if @transition_hash[current_state.name] && (next_state_name = @transition_hash[current_state.name][character])
+    if next_state_name = @transition_hash[current_state.name] && @transition_hash[current_state.name][character]
       get_state_by_name next_state_name
     else
       raise "Could not calculate the next state's name with inputs -- state: #{current_state} and character: #{character}"
@@ -42,9 +42,9 @@ class DFA
 
 end
 
-# test_transition_hash = {
-#   "s1" => {"0" => "s1", "1" => "s2"},
-#   "s2" => {"0" => "s2", "1" => "s1"}
-# }
+test_transition_hash = {
+  "s1" => {"0" => "s1", "1" => "s2"},
+  "s2" => {"0" => "s2", "1" => "s1"}
+}
 
-# @test_dfa = DFA.new([State.new("s1", "true", "true"), State.new("s2", "false", "false")], test_transition_hash)
+@test_dfa = DFA.new([State.new("s1", true, true), State.new("s2", false, false)], test_transition_hash)
