@@ -27,8 +27,7 @@ class DFA
   private
 
   def get_state_by_name(name)
-    state = @states.select{|s| s.name == name}.first
-    raise "State with name #{name} could not be found" unless state
+    raise "State with name #{name} could not be found" unless state = @states.select{|s| s.name == name}.first
     state
   end
 
