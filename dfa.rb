@@ -41,10 +41,3 @@ class DFA
   end
 
 end
-
-test_transition_hash = {
-  "s1" => {"0" => "s1", "1" => "s2"},
-  "s2" => {"0" => "s2", "1" => "s1"}
-}
-
-@test_dfa = DFA.new([State.new("s1", true, true), State.new("s2", false, false)], test_transition_hash)
