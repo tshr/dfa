@@ -27,8 +27,8 @@ describe DFA do
     describe "when matching a valid string" do
 
       before do
-        @accept_test_string = "011010100011"
-        @reject_test_string = "011010100010"
+        @accept_test_string = "01101010001100"
+        @reject_test_string = "01101010001000"
       end
 
       it "accepts a string with an even number of 1s" do

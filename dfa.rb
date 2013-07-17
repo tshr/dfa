@@ -1,3 +1,19 @@
+# Library to create deterministic finite automata. You pass in the states,
+# whether they are accept are start states, and a hash representing the transition function
+#
+# For example:
+#
+# transition_hash = {
+#        "s1" => {"0" => "s1", "1" => "s2"},
+#        "s2" => {"0" => "s2", "1" => "s1"}
+#      }
+#
+# DFA.new([State.new("s1", true, true), State.new("s2", false, false)], transition_hash)
+#
+# This DFA is composed of two states (s1, and s2) where s1 is both the start state
+# and the only accept state. The DFA's alphabet is {0,1} and 0's cause the state to change
+# This matches language of strings of 0 and 1 where there are an even number of ones.
+
 State = Struct.new(:name, :is_start, :is_accept)
 
 class DFA
