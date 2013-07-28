@@ -1,4 +1,4 @@
-# Library to create deterministic finite automata. You pass in the states,
+# Class to create deterministic finite automata. You pass in the states,
 # whether they are accept are start states, and a hash representing the transition function
 #
 # For example:
