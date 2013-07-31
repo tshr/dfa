@@ -11,8 +11,8 @@
 # DFA.new([State.new("s1", true, true), State.new("s2", false, false)], transition_hash)
 #
 # This DFA is composed of two states (s1, and s2) where s1 is both the start state
-# and the only accept state. The DFA's alphabet is {0,1} and 0's cause the state to change
-# This matches language of strings of 0 and 1 where there are an even number of ones.
+# and the only accept state. The DFA's alphabet is {0,1} and 1's cause the state to change
+# This matches language of strings of 0 and 1 where there are an even number of 1's.
 
 State = Struct.new(:name, :is_start, :is_accept)
 
