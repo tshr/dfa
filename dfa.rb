@@ -37,7 +37,7 @@ class DFA
   end
 
   def accepts?(string)
-    !!compute_final_state(string).is_accept
+    compute_final_state(string).is_accept
   end
 
   private
