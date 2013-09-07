@@ -16,9 +16,9 @@
   and the only accept state. The DFA's alphabet is {0,1} and 1's cause the state to change
   This matches the language of strings of 0 and 1 where there are an even number of 1's. E.g.
 
-  foo.accepts?("1010101") # => true
-  foo.accepts?("101010") # => false
-  foo.compute_final_state("1010101") # => #<struct State name="s1", is_start=true, is_accept=true>
+  foo.accepts?("1010101") #=> true
+  foo.accepts?("101010") #=> false
+  foo.compute_final_state("1010101") #=> <struct State name="s1", is_start=true, is_accept=true>
 
 =end
 
