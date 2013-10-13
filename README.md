@@ -15,7 +15,7 @@ Example
 
 This creates a DFA composed of two states (s1, and s2) where s1 is both the start state
 and the only accept state. The DFA's alphabet is {0,1} and 1's cause the state to change.
-This matches the language of strings of 0 and 1 where there are an even number of 1's. E.g.
+This matches the language of strings of 0 and 1 where there are an even number of 1's.
 
        foo.accepts?("1010101") #=> true
        foo.accepts?("101010") #=> false
