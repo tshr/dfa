@@ -17,7 +17,7 @@ class DFA
   end
 
   def compute_final_state(string)
-    string.split("").inject(@initial_state) { |state, ch| compute_next_state(state, ch) }
+    string.split("").inject(@initial_state) {|state, ch| compute_next_state(state, ch)}
   end
 
   def accepts?(string)
