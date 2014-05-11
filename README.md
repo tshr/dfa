@@ -1,7 +1,7 @@
-DFA.rb
+dfa.rb
 ======
 
-Class to create deterministic finite automata. Just pass in the states, whether they are accept or start states, and a hash representing the transition function, and it returns an object that tests strings for whether they result in an accept state.
+Class to create deterministic finite automata (DFA). Pass in the states, whether they are accept or start states, and a hash representing the transition function, and it returns an object that tests strings for whether they result in an accept state.
 
 Example
 -------
